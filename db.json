@@ -184,6 +184,5 @@
       "endDate": "2026-07-30",
       "goal": "Complete Agile Issue Tracker MVP"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

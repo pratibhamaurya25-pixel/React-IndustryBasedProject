@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001";
+const API_URL = "https://jira-json-server.onrender.com";
 
 export async function getTickets() {
   const response = await fetch(`${API_URL}/tickets`);
