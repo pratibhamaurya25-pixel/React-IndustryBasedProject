@@ -1,7 +1,7 @@
 import Ticket from "./Ticket";
 import "../styles/column.css";
 
-function Column({ title, tickets,onEdit, onDelete }) {
+function Column({ title, tickets,onEdit,onMove,onDelete }) {
   return (
     <div className="column">
       <h2>{title}</h2>
@@ -11,7 +11,8 @@ function Column({ title, tickets,onEdit, onDelete }) {
         key={ticket.id} 
         ticket={ticket} 
         onEdit={onEdit}
-        onDelete = {onDelete} />
+        onDelete = {onDelete}
+        onMove={onMove} />
       ))}
     </div>
   );
