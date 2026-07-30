@@ -1,13 +1,80 @@
-.ticket{
-    background:white;
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-    cursor:pointer;
-    transition:.2s;
+.ticket {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-.ticket:hover{
-    transform:translateY(-4px);
+.ticket:hover {
+  transform: translateY(-3px);
+}
+
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-bottom {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  margin-top: 12px;
+  color: gray;
+}
+
+.status {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.todo {
+  background: orange;
+}
+
+.in-progress {
+  background: royalblue;
+}
+
+.done {
+  background: green;
+}
+
+.ticket-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.edit-btn {
+  background: #0052cc;
+  color: white;
+}
+
+
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+
+.delete-btn:hover {
+  background: #b71c1c;
 }

@@ -1,10 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import { getTickets } from "../services/api";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { getTickets, deleteTicket } from "../services/api";
 import "../styles/home.css";
 import Loader from "../components/Loader"
 import Board from "../components/Board"
+import {Link} from "react-router-dom"
 
 function Home() {
+
+  const queryClient = useQueryClient();
+
   const {
     data: tickets,
     isLoading,
@@ -13,6 +17,16 @@ function Home() {
   } = useQuery({
     queryKey: ["tickets"],
     queryFn: getTickets,
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteTicket,
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["tickets"],
+      });
+    },
   });
 
   if (isLoading) {
@@ -24,35 +38,11 @@ function Home() {
   }
 
   return (
-    <div className="home">
-      <h1 className="heading">Agile Issue Tracker</h1>
+     <div className="home">
 
-      {/* <div className="ticket-container">
-        {tickets.map((ticket) => (
-          <div className="ticket-card" key={ticket.id}>
-            <div className="ticket-header">
-              <h3>{ticket.title}</h3>
-              <span className={`status ${ticket.status}`}>
-                {ticket.status}
-              </span>
-            </div>
-
-            <p className="description">{ticket.description}</p>
-
-            <div className="ticket-footer">
-              <span>
-                <strong>Priority:</strong> {ticket.priority}
-              </span>
-
-              <span>
-                <strong>ID:</strong> #{ticket.id}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div> */}
-
-      <Board tickets={tickets} />
+      <Board 
+      tickets={tickets}
+       />
     </div>
   );
 }
