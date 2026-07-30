@@ -1,12 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getTickets, deleteTicket } from "../services/api";
 import "../styles/home.css";
-import Loader from "../components/Loader"
-import Board from "../components/Board"
-import {Link} from "react-router-dom"
+import Loader from "../components/Loader";
+import Board from "../components/Board";
+import { Link } from "react-router-dom";
 
 function Home() {
-
   const queryClient = useQueryClient();
 
   const {
@@ -38,11 +37,9 @@ function Home() {
   }
 
   return (
-     <div className="home">
+    <div className="home">
 
-      <Board 
-      tickets={tickets}
-       />
+      <Board tickets={tickets} />
     </div>
   );
 }

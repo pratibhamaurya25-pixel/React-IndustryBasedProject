@@ -7,7 +7,8 @@ function CreateTicket() {
 
   return (
     <div className="create-ticket">
-      <h1>Create New Ticket</h1>
+
+       <h1>Create New Ticket</h1>
 
       <Form method="post" className="ticket-form">
         <label>Title</label>
@@ -47,6 +48,7 @@ function CreateTicket() {
         </div>
       </Form>
     </div>
+
   );
 }
 

@@ -30,9 +30,7 @@ function Modal({ ticket, onClose, onUpdate }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <button className="close-btn" onClick={onClose}>
-          ✕
-        </button>
+        <button className="close-btn" onClick={onClose}>✕</button>
 
         <h2>Edit Ticket</h2>
 
