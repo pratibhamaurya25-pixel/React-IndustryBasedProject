@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+nav div:last-child {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #334155;
+}
+
+nav a.active {
+  background-color: #3b82f6;
+  color: white;
+}
