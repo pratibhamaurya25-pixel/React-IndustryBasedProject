@@ -54,6 +54,7 @@
   margin-top: 15px;
 }
 
+.move-btn,
 .edit-btn,
 .delete-btn {
   border: none;
@@ -62,7 +63,7 @@
   cursor: pointer;
 }
 
-
+.move-btn,
 .edit-btn {
   background: #0052cc;
   color: white;
