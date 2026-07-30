@@ -1,43 +1,41 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Pratibha Maurya",
       "email": "pratibha@gmail.com",
       "avatar": "https://i.pravatar.cc/150?img=1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rahul Sharma",
       "email": "rahul@gmail.com",
       "avatar": "https://i.pravatar.cc/150?img=2"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Priya Singh",
       "email": "priya@gmail.com",
       "avatar": "https://i.pravatar.cc/150?img=3"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Amit Kumar",
       "email": "amit@gmail.com",
       "avatar": "https://i.pravatar.cc/150?img=4"
     }
   ],
-
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Jira Clone",
       "description": "Agile Issue Tracker",
       "createdBy": 1
     }
   ],
-
   "tickets": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Design Login Page",
       "description": "Create responsive login UI.",
       "status": "todo",
@@ -49,7 +47,7 @@
       "createdAt": "2026-07-20"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Setup React Router",
       "description": "Configure all routes.",
       "status": "todo",
@@ -61,19 +59,7 @@
       "createdAt": "2026-07-21"
     },
     {
-      "id": 3,
-      "title": "Create Navbar",
-      "description": "Responsive navigation bar.",
-      "status": "in-progress",
-      "priority": "High",
-      "assignee": 4,
-      "reporter": 2,
-      "projectId": 1,
-      "sprintId": 1,
-      "createdAt": "2026-07-21"
-    },
-    {
-      "id": 4,
+      "id": "4",
       "title": "Implement Authentication",
       "description": "Mock login using localStorage.",
       "status": "in-progress",
@@ -85,7 +71,7 @@
       "createdAt": "2026-07-22"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Fetch Tickets",
       "description": "Use React Query useQuery.",
       "status": "done",
@@ -97,7 +83,7 @@
       "createdAt": "2026-07-22"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Build Ticket Card",
       "description": "Display ticket details.",
       "status": "todo",
@@ -109,7 +95,7 @@
       "createdAt": "2026-07-23"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Create Modal",
       "description": "Open ticket details in modal.",
       "status": "todo",
@@ -121,7 +107,7 @@
       "createdAt": "2026-07-23"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Update Ticket",
       "description": "Edit ticket details.",
       "status": "in-progress",
@@ -133,7 +119,7 @@
       "createdAt": "2026-07-24"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Delete Ticket",
       "description": "Remove ticket.",
       "status": "done",
@@ -145,7 +131,7 @@
       "createdAt": "2026-07-24"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Move Ticket Between Columns",
       "description": "Optimistic UI using useMutation.",
       "status": "todo",
@@ -157,7 +143,7 @@
       "createdAt": "2026-07-25"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Optimize Ticket Rendering",
       "description": "Use React.memo.",
       "status": "todo",
@@ -169,7 +155,7 @@
       "createdAt": "2026-07-25"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Implement useCallback",
       "description": "Optimize handlers.",
       "status": "done",
@@ -179,43 +165,49 @@
       "projectId": 1,
       "sprintId": 1,
       "createdAt": "2026-07-26"
+    },
+    {
+      "title": "ASDFGHJK",
+      "description": "ZXCVB",
+      "priority": "Low",
+      "status": "in-progress",
+      "id": "tdiWO35tjNQ"
     }
   ],
-
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "ticketId": 1,
       "userId": 2,
       "text": "I'll start working on this."
     },
     {
-      "id": 2,
+      "id": "2",
       "ticketId": 3,
       "userId": 4,
       "text": "Navbar completed."
     },
     {
-      "id": 3,
+      "id": "3",
       "ticketId": 5,
       "userId": 3,
       "text": "API fetching works."
     },
     {
-      "id": 4,
+      "id": "4",
       "ticketId": 10,
       "userId": 1,
       "text": "Need optimistic update."
     }
   ],
-
   "sprints": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Sprint 1",
       "startDate": "2026-07-20",
       "endDate": "2026-07-30",
       "goal": "Complete Agile Issue Tracker MVP"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

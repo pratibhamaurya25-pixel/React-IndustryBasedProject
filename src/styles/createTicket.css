@@ -1,0 +1,36 @@
+.create-ticket{
+    width:600px;
+    margin:40px auto;
+}
+
+.ticket-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.ticket-form input,
+.ticket-form textarea,
+.ticket-form select{
+    padding:10px;
+    font-size:16px;
+}
+
+.ticket-form button{
+    padding:12px;
+    background:#0052cc;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.ticket-form button:hover{
+    background:#003f9e;
+}
+
+.form-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
