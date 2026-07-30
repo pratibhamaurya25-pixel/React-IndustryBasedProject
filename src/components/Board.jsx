@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteTicket, updateTicket } from "../services/api";
 import Modal from "./Modal";
@@ -71,26 +71,32 @@ function Board({ tickets }) {
 
   const done = tickets.filter((ticket) => ticket.status === "done");
 
-  function handleEdit(ticket) {
+  const handleEdit = useCallback((ticket) => {
     setSelectedTicket(ticket);
-  }
+  }, []);
 
-  function handleDelete(id) {
-    const confirmDelete = window.confirm("Delete this ticket?");
+  const handleDelete = useCallback(
+    (id) => {
+      const confirmDelete = window.confirm("Delete this ticket?");
 
-    if (confirmDelete) {
-      deleteMutation.mutate(id);
-    }
-  }
+      if (confirmDelete) {
+        deleteMutation.mutate(id);
+      }
+    },
+    [deleteMutation],
+  );
 
-  function handleUpdate(id, updatedTicket) {
-    updateMutation.mutate({
-      id,
-      updatedTicket,
-    });
+  const handleUpdate = useCallback(
+    (id, updatedTicket) => {
+      updateMutation.mutate({
+        id,
+        updatedTicket,
+      });
 
-    setSelectedTicket(null);
-  }
+      setSelectedTicket(null);
+    },
+    [updateMutation],
+  );
 
   function getNextStatus(status) {
     if (status === "todo") {
@@ -104,7 +110,7 @@ function Board({ tickets }) {
     return "done";
   }
 
-  function handleMove(ticket) {
+  const handleMove = useCallback((ticket) => {
     const updatedTicket = {
       ...ticket,
       status: getNextStatus(ticket.status),
@@ -114,7 +120,7 @@ function Board({ tickets }) {
       id: ticket.id,
       updatedTicket,
     });
-  }
+  },[moveMutation]);
 
   return (
     <>
@@ -124,7 +130,7 @@ function Board({ tickets }) {
           tickets={todo}
           onEdit={handleEdit}
           onDelete={handleDelete}
-          onMove = {handleMove}
+          onMove={handleMove}
         />
 
         <Column
@@ -132,7 +138,7 @@ function Board({ tickets }) {
           tickets={inProgress}
           onEdit={handleEdit}
           onDelete={handleDelete}
-          onMove = {handleMove}
+          onMove={handleMove}
         />
 
         <Column
@@ -140,7 +146,7 @@ function Board({ tickets }) {
           tickets={done}
           onEdit={handleEdit}
           onDelete={handleDelete}
-          onMove = {handleMove}
+          onMove={handleMove}
         />
       </div>
 
