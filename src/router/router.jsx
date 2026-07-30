@@ -3,7 +3,6 @@ import { createBrowserRouter, redirect } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import CreateTicket from "../pages/CreateTicket";
-import EditTicket from "../pages/EditTicket";
 import NotFound from "../pages/NotFound";
 import {createTicket} from "../services/api";
 
@@ -36,10 +35,6 @@ const router = createBrowserRouter([
         path: "createTicket",
         element: <CreateTicket />,
         action: createTicketAction,
-      },
-      {
-        path: "editTicket",
-        element: <EditTicket />,
       },
     ],
   },

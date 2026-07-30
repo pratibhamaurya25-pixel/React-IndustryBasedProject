@@ -16,6 +16,10 @@ function Board({ tickets }) {
         queryKey: ["tickets"],
       });
     },
+
+    onError: () => {
+      alert("Unable to delete ticket.");
+    },
   });
 
   const updateMutation = useMutation({
@@ -26,21 +30,22 @@ function Board({ tickets }) {
         queryKey: ["tickets"],
       });
     },
+
+    onError: () => {
+      alert("Unable to update ticket.");
+    },
   });
 
   const moveMutation = useMutation({
     mutationFn: updateTicket,
 
     onMutate: async ({ id, updatedTicket }) => {
-      // Stop any ongoing fetches
       await queryClient.cancelQueries({
         queryKey: ["tickets"],
       });
 
-      // Save the current tickets
       const previousTickets = queryClient.getQueryData(["tickets"]);
 
-      // Update the UI immediately
       queryClient.setQueryData(["tickets"], (oldTickets) =>
         oldTickets.map((ticket) => (ticket.id === id ? updatedTicket : ticket)),
       );
@@ -49,12 +54,11 @@ function Board({ tickets }) {
     },
 
     onError: (error, variables, context) => {
-      // Restore old data if API fails
       queryClient.setQueryData(["tickets"], context.previousTickets);
+      alert("Failed to move ticket.");
     },
 
     onSettled: () => {
-      // Refetch latest data
       queryClient.invalidateQueries({
         queryKey: ["tickets"],
       });
@@ -110,17 +114,20 @@ function Board({ tickets }) {
     return "done";
   }
 
-  const handleMove = useCallback((ticket) => {
-    const updatedTicket = {
-      ...ticket,
-      status: getNextStatus(ticket.status),
-    };
+  const handleMove = useCallback(
+    (ticket) => {
+      const updatedTicket = {
+        ...ticket,
+        status: getNextStatus(ticket.status),
+      };
 
-    moveMutation.mutate({
-      id: ticket.id,
-      updatedTicket,
-    });
-  },[moveMutation]);
+      moveMutation.mutate({
+        id: ticket.id,
+        updatedTicket,
+      });
+    },
+    [moveMutation],
+  );
 
   return (
     <>
@@ -131,6 +138,9 @@ function Board({ tickets }) {
           onEdit={handleEdit}
           onDelete={handleDelete}
           onMove={handleMove}
+          isDeleting={deleteMutation.isPending}
+          isUpdating={updateMutation.isPending}
+          isMoving={moveMutation.isPending}
         />
 
         <Column
@@ -139,6 +149,9 @@ function Board({ tickets }) {
           onEdit={handleEdit}
           onDelete={handleDelete}
           onMove={handleMove}
+          isDeleting={deleteMutation.isPending}
+          isUpdating={updateMutation.isPending}
+          isMoving={moveMutation.isPending}
         />
 
         <Column
@@ -147,6 +160,9 @@ function Board({ tickets }) {
           onEdit={handleEdit}
           onDelete={handleDelete}
           onMove={handleMove}
+          isDeleting={deleteMutation.isPending}
+          isUpdating={updateMutation.isPending}
+          isMoving={moveMutation.isPending}
         />
       </div>
 

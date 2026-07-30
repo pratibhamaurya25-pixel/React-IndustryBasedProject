@@ -1,6 +1,35 @@
-.board{
-    display:flex;
-    gap:20px;
-    padding:30px;
-    align-items:flex-start;
+.board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .board {
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .board {
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 10px;
+  }
+
 }
