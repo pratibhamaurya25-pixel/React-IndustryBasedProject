@@ -1,0 +1,14 @@
+
+footer {
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 15px;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer p {
+  margin: 0;
+}

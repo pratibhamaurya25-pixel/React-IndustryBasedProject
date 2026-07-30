@@ -1,0 +1,6 @@
+.board{
+    display:flex;
+    gap:20px;
+    padding:30px;
+    align-items:flex-start;
+}

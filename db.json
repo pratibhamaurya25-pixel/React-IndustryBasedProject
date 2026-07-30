@@ -1,0 +1,221 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pratibha Maurya",
+      "email": "pratibha@gmail.com",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      "id": 2,
+      "name": "Rahul Sharma",
+      "email": "rahul@gmail.com",
+      "avatar": "https://i.pravatar.cc/150?img=2"
+    },
+    {
+      "id": 3,
+      "name": "Priya Singh",
+      "email": "priya@gmail.com",
+      "avatar": "https://i.pravatar.cc/150?img=3"
+    },
+    {
+      "id": 4,
+      "name": "Amit Kumar",
+      "email": "amit@gmail.com",
+      "avatar": "https://i.pravatar.cc/150?img=4"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Jira Clone",
+      "description": "Agile Issue Tracker",
+      "createdBy": 1
+    }
+  ],
+
+  "tickets": [
+    {
+      "id": 1,
+      "title": "Design Login Page",
+      "description": "Create responsive login UI.",
+      "status": "todo",
+      "priority": "High",
+      "assignee": 2,
+      "reporter": 1,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-20"
+    },
+    {
+      "id": 2,
+      "title": "Setup React Router",
+      "description": "Configure all routes.",
+      "status": "todo",
+      "priority": "Medium",
+      "assignee": 3,
+      "reporter": 1,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-21"
+    },
+    {
+      "id": 3,
+      "title": "Create Navbar",
+      "description": "Responsive navigation bar.",
+      "status": "in-progress",
+      "priority": "High",
+      "assignee": 4,
+      "reporter": 2,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-21"
+    },
+    {
+      "id": 4,
+      "title": "Implement Authentication",
+      "description": "Mock login using localStorage.",
+      "status": "in-progress",
+      "priority": "High",
+      "assignee": 2,
+      "reporter": 1,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-22"
+    },
+    {
+      "id": 5,
+      "title": "Fetch Tickets",
+      "description": "Use React Query useQuery.",
+      "status": "done",
+      "priority": "Medium",
+      "assignee": 3,
+      "reporter": 2,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-22"
+    },
+    {
+      "id": 6,
+      "title": "Build Ticket Card",
+      "description": "Display ticket details.",
+      "status": "todo",
+      "priority": "Low",
+      "assignee": 4,
+      "reporter": 3,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-23"
+    },
+    {
+      "id": 7,
+      "title": "Create Modal",
+      "description": "Open ticket details in modal.",
+      "status": "todo",
+      "priority": "Medium",
+      "assignee": 1,
+      "reporter": 2,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-23"
+    },
+    {
+      "id": 8,
+      "title": "Update Ticket",
+      "description": "Edit ticket details.",
+      "status": "in-progress",
+      "priority": "High",
+      "assignee": 2,
+      "reporter": 4,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-24"
+    },
+    {
+      "id": 9,
+      "title": "Delete Ticket",
+      "description": "Remove ticket.",
+      "status": "done",
+      "priority": "Low",
+      "assignee": 3,
+      "reporter": 2,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-24"
+    },
+    {
+      "id": 10,
+      "title": "Move Ticket Between Columns",
+      "description": "Optimistic UI using useMutation.",
+      "status": "todo",
+      "priority": "High",
+      "assignee": 1,
+      "reporter": 4,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-25"
+    },
+    {
+      "id": 11,
+      "title": "Optimize Ticket Rendering",
+      "description": "Use React.memo.",
+      "status": "todo",
+      "priority": "Medium",
+      "assignee": 4,
+      "reporter": 3,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-25"
+    },
+    {
+      "id": 12,
+      "title": "Implement useCallback",
+      "description": "Optimize handlers.",
+      "status": "done",
+      "priority": "Medium",
+      "assignee": 2,
+      "reporter": 1,
+      "projectId": 1,
+      "sprintId": 1,
+      "createdAt": "2026-07-26"
+    }
+  ],
+
+  "comments": [
+    {
+      "id": 1,
+      "ticketId": 1,
+      "userId": 2,
+      "text": "I'll start working on this."
+    },
+    {
+      "id": 2,
+      "ticketId": 3,
+      "userId": 4,
+      "text": "Navbar completed."
+    },
+    {
+      "id": 3,
+      "ticketId": 5,
+      "userId": 3,
+      "text": "API fetching works."
+    },
+    {
+      "id": 4,
+      "ticketId": 10,
+      "userId": 1,
+      "text": "Need optimistic update."
+    }
+  ],
+
+  "sprints": [
+    {
+      "id": 1,
+      "name": "Sprint 1",
+      "startDate": "2026-07-20",
+      "endDate": "2026-07-30",
+      "goal": "Complete Agile Issue Tracker MVP"
+    }
+  ]
+}
