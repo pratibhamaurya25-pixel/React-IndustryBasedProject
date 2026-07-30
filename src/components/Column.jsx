@@ -1,3 +1,4 @@
+import React from "react";
 import Ticket from "./Ticket";
 import "../styles/column.css";
 
@@ -18,6 +19,6 @@ function Column({ title, tickets,onEdit,onMove,onDelete }) {
   );
 }
 
-export default Column;
+export default React.memo(Column);
 
 

@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/ticket.css";
 
 function Ticket({ ticket, onEdit,onMove,onDelete }) {
@@ -34,4 +35,4 @@ function Ticket({ ticket, onEdit,onMove,onDelete }) {
   );
 }
 
-export default Ticket;
+export default React.memo(Ticket);
