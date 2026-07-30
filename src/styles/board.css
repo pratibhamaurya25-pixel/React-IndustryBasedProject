@@ -1,10 +1,11 @@
+
 .board {
   display: flex;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  overflow-x: auto;
+  justify-content: center;   
   align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  margin: 0 auto;
 }
 
 .board::-webkit-scrollbar {
