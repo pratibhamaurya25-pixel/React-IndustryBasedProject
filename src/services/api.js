@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const API_URL = "https://backend-py13.onrender.com";
+=======
+const API_URL = "ttps://backend-py13.onrender.com";
+>>>>>>> d21f542 (update backend render url)
 
 
 // GET tickets
