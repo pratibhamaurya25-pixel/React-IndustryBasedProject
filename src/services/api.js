@@ -1,7 +1,6 @@
 const API_URL =
   "https://react-industrybasedproject-1.onrender.com/tickets";
 
-
 export async function getTickets() {
   const response = await fetch(API_URL);
 
