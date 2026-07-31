@@ -14,7 +14,13 @@ const router = jsonServer.router(
 
 const middlewares = jsonServer.defaults();
 
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://agile-issue-tracker.netlify.app",
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+  })
+);
+
 server.use(jsonServer.bodyParser);
 server.use(middlewares);
 
@@ -23,5 +29,5 @@ server.use(router);
 const PORT = process.env.PORT || 10000;
 
 server.listen(PORT, () => {
-  console.log(`🚀 JSON Server running on port ${PORT}`);
+  console.log(`JSON Server running on port ${PORT}`);
 });
