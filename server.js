@@ -5,17 +5,14 @@ const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
-const PORT = process.env.PORT || 3001;
-
 server.use(cors());
+server.use(jsonServer.bodyParser);
 server.use(middlewares);
-
-server.get("/health", (req, res) => {
-  res.json({ status: "ok" });
-});
 
 server.use(router);
 
-server.listen(PORT, "0.0.0.0", () => {
-  console.log(`JSON Server running on port ${PORT}`);
+const PORT = process.env.PORT || 10000;
+
+server.listen(PORT, () => {
+  console.log(`🚀 JSON Server is running on port ${PORT}`);
 });

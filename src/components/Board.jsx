@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import Column from "./Column";
 import "../styles/board.css";
 
-function Board({ tickets }) {
+function Board({ tickets = [] }) {
   const queryClient = useQueryClient();
 
   const deleteMutation = useMutation({
@@ -44,17 +44,22 @@ function Board({ tickets }) {
         queryKey: ["tickets"],
       });
 
-      const previousTickets = queryClient.getQueryData(["tickets"]);
+      const previousTickets = queryClient.getQueryData(["tickets"]) || [];
 
-      queryClient.setQueryData(["tickets"], (oldTickets) =>
-        oldTickets.map((ticket) => (ticket.id === id ? updatedTicket : ticket)),
+      queryClient.setQueryData(["tickets"], (oldTickets = []) =>
+        oldTickets.map((ticket) =>
+          ticket.id === id ? updatedTicket : ticket
+        )
       );
 
       return { previousTickets };
     },
 
     onError: (error, variables, context) => {
-      queryClient.setQueryData(["tickets"], context.previousTickets);
+      queryClient.setQueryData(
+        ["tickets"],
+        context?.previousTickets || []
+      );
       alert("Failed to move ticket.");
     },
 
@@ -67,13 +72,17 @@ function Board({ tickets }) {
 
   const [selectedTicket, setSelectedTicket] = useState(null);
 
-  const todo = tickets.filter((ticket) => ticket.status === "todo");
-
-  const inProgress = tickets.filter(
-    (ticket) => ticket.status === "in-progress",
+  const todo = tickets.filter(
+    (ticket) => ticket.status === "todo"
   );
 
-  const done = tickets.filter((ticket) => ticket.status === "done");
+  const inProgress = tickets.filter(
+    (ticket) => ticket.status === "in-progress"
+  );
+
+  const done = tickets.filter(
+    (ticket) => ticket.status === "done"
+  );
 
   const handleEdit = useCallback((ticket) => {
     setSelectedTicket(ticket);
@@ -87,7 +96,7 @@ function Board({ tickets }) {
         deleteMutation.mutate(id);
       }
     },
-    [deleteMutation],
+    [deleteMutation]
   );
 
   const handleUpdate = useCallback(
@@ -99,19 +108,18 @@ function Board({ tickets }) {
 
       setSelectedTicket(null);
     },
-    [updateMutation],
+    [updateMutation]
   );
 
   function getNextStatus(status) {
-    if (status === "todo") {
-      return "in-progress";
+    switch (status) {
+      case "todo":
+        return "in-progress";
+      case "in-progress":
+        return "done";
+      default:
+        return "done";
     }
-
-    if (status === "in-progress") {
-      return "done";
-    }
-
-    return "done";
   }
 
   const handleMove = useCallback(
@@ -126,7 +134,7 @@ function Board({ tickets }) {
         updatedTicket,
       });
     },
-    [moveMutation],
+    [moveMutation]
   );
 
   return (
