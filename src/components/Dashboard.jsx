@@ -1,7 +1,7 @@
 import "../styles/dashboard.css";
 import { useState } from "react";
 
-function Dashboard({ tickets, search, setSearch }) {
+function Dashboard({ tickets }) {
   const [search, setSearch] = useState("");
   const total = tickets.length;
   const todo = tickets.filter(t => t.status === "todo").length;
