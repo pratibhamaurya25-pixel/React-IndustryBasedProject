@@ -5,11 +5,11 @@
 
 .dashboard-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 35px;
-  flex-wrap: wrap;
-  gap: 20px;
+  /* flex-wrap: wrap; */
+  gap: 40px;
 }
 
 .dashboard-header h1 {
