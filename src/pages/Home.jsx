@@ -1,3 +1,4 @@
+import {useState} from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTickets } from "../services/api";
 import "../styles/home.css";
@@ -6,6 +7,8 @@ import Board from "../components/Board";
 import Dashboard from "../components/Dashboard";
 
 function Home() {
+  
+  const [search, setSearch] = useState("");
 
   const {
     data: tickets = [],
@@ -16,6 +19,10 @@ function Home() {
     queryKey: ["tickets"],
     queryFn: getTickets,
   });
+
+  const filteredTickets = tickets.filter((ticket) =>
+    ticket.title.toLowerCase().includes(search.toLowerCase())
+  );
 
 
   if (isLoading) {
@@ -33,7 +40,7 @@ function Home() {
 
       <Dashboard tickets={tickets} search={search} setSearch={setSearch} />
 
-      <Board tickets={tickets} />
+      <Board tickets={filteredTickets} />
     </div>
   );
 }
