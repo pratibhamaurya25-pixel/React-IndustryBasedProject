@@ -1,7 +1,15 @@
 import React from "react";
 import "../styles/ticket.css";
 
-function Ticket({ ticket, onEdit,onMove,onDelete, isDeleting, isUpdating, isMoving}) {
+function Ticket({
+  ticket,
+  onEdit,
+  onMove,
+  onDelete,
+  isDeleting,
+  isUpdating,
+  isMoving,
+}) {
   return (
     <div className="ticket">
       <div>
@@ -17,17 +25,31 @@ function Ticket({ ticket, onEdit,onMove,onDelete, isDeleting, isUpdating, isMovi
       </div>
 
       <div className="ticket-actions">
-        <button className="delete-btn" onClick={() => onDelete(ticket.id)} disabled={isDeleting}>
+        <button
+          className="delete-btn"
+          onClick={() => onDelete(ticket.id)}
+          disabled={isDeleting}
+        >
           {isDeleting ? "Deleting..." : "Delete"}
         </button>
 
-        <button className="edit-btn" onClick={() => onEdit(ticket)} disabled={isUpdating}>
+        <button
+          className="edit-btn"
+          onClick={() => onEdit(ticket)}
+          disabled={isUpdating}
+        >
           {isUpdating ? "Updating..." : "Edit"}
         </button>
 
-        <button className="move-btn" onClick={() => onMove(ticket)} disabled={isMoving}>
-          {isMoving ? "Moving..." : "Move"}
-        </button>
+        {ticket.status !== "done" && (
+          <button
+            className="move-btn"
+            onClick={() => onMove(ticket)}
+            disabled={isMoving}
+          >
+            {isMoving ? "Moving..." : "Move"}
+          </button>
+        )}
       </div>
     </div>
   );
