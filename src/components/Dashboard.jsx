@@ -14,7 +14,7 @@ function Dashboard({ tickets, search, setSearch }) {
     <div className = "dashboard">  
       <div className = "dashboard-header">
          <div>
-          <h1>Dashboard</h1>
+          <h2>Dashboard</h2>
           <p>Manage your project tasks efficiently.</p>
         </div>
 
