@@ -1,47 +1,126 @@
-.dashboard{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin:30px 0;
-    flex-wrap:wrap;
+.dashboard {
+  width: 100%;
+  margin: 20px auto 40px;
 }
 
-.card{
-    width:220px;
-    background:white;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-    transition:.3s;
+/* Header */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  color: #1e3a8a;
+  font-weight: 700;
 }
 
-.card h2{
-    font-size:40px;
-    margin-bottom:10px;
+.dashboard-header p {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 1rem;
 }
 
-.card p{
-    font-size:18px;
-    font-weight:600;
+/* Search Bar */
+
+.search-bar {
+  width: 320px;
+  padding: 14px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 30px;
+  background: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
-.total{
-    border-top:6px solid #3b82f6;
+.search-bar:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37,99,235,.25);
 }
 
-.todo{
-    border-top:6px solid #6366f1;
+/* Dashboard Cards */
+
+.dashboard-content {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.progress{
-    border-top:6px solid #f59e0b;
+/* Card */
+
+.card {
+  width: 220px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: 0.3s ease;
 }
 
-.done{
-    border-top:6px solid #10b981;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 42px;
+  color: #111827;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Top Border Colors */
+
+.total {
+  border-top: 6px solid #3b82f6;
+}
+
+.todo {
+  border-top: 6px solid #6366f1;
+}
+
+.progress {
+  border-top: 6px solid #f59e0b;
+}
+
+.done {
+  border-top: 6px solid #10b981;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .dashboard-content {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
 }

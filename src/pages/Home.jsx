@@ -31,7 +31,7 @@ function Home() {
   return (
     <div className="home">
 
-      <Dashboard tickets={tickets} />
+      <Dashboard tickets={tickets} search={search} setSearch={setSearch} />
 
       <Board tickets={tickets} />
     </div>
