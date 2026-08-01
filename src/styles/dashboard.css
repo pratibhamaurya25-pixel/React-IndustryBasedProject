@@ -3,9 +3,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 35px;
-  gap: 60vw;
+  margin: 20px 0 35px;
+  gap: 50px;
+}
+
+.header-text{
+   text-align: center;
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #1e3a8a;
+}
+
+.header-text p {
+  margin-top: 8px;
+  color: #6b7280;
 }
 
 .dashboard-header h1 {

@@ -13,7 +13,7 @@ function Dashboard({ tickets, search, setSearch }) {
   return (
     <div className = "dashboard">  
       <div className = "dashboard-header">
-         <div>
+         <div className="header-text">
           <h2>Dashboard</h2>
           <p>Manage your project tasks efficiently.</p>
         </div>
