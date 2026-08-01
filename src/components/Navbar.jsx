@@ -10,7 +10,7 @@ function Navbar() {
 
     <div>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/createticket">New Ticket</NavLink>
+      <NavLink to="/createticket">+ Create Ticket</NavLink>
     </div>
   </nav>
 )}
