@@ -1,0 +1,47 @@
+.dashboard{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:220px;
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:18px;
+    font-weight:600;
+}
+
+.total{
+    border-top:6px solid #3b82f6;
+}
+
+.todo{
+    border-top:6px solid #6366f1;
+}
+
+.progress{
+    border-top:6px solid #f59e0b;
+}
+
+.done{
+    border-top:6px solid #10b981;
+}

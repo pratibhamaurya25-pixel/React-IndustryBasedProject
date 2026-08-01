@@ -3,6 +3,7 @@ import { getTickets } from "../services/api";
 import "../styles/home.css";
 import Loader from "../components/Loader";
 import Board from "../components/Board";
+import Dashboard from "../components/Dashboard";
 
 function Home() {
 
@@ -29,6 +30,9 @@ function Home() {
 
   return (
     <div className="home">
+
+      <Dashboard tickets={tickets} />
+
       <Board tickets={tickets} />
     </div>
   );
