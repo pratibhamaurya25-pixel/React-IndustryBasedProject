@@ -9,7 +9,7 @@
   align-items: center;
   margin-bottom: 35px;
   /* flex-wrap: wrap; */
-  gap: 200px;
+  gap: 60vw;
 }
 
 .dashboard-header h1 {
