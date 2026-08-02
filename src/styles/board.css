@@ -5,7 +5,7 @@
   align-items: flex-start;
   gap: 20px;
   padding: 30px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .board::-webkit-scrollbar {
