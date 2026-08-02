@@ -1,6 +1,5 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-// GET tickets
 export async function getTickets() {
   const response = await fetch(`${API_URL}/tickets`);
 
@@ -11,8 +10,6 @@ export async function getTickets() {
   return response.json();
 }
 
-
-// CREATE ticket
 export async function createTicket(ticket) {
   const response = await fetch(`${API_URL}/tickets`, {
     method: "POST",
@@ -29,8 +26,6 @@ export async function createTicket(ticket) {
   return response.json();
 }
 
-
-// DELETE ticket
 export async function deleteTicket(id) {
   const response = await fetch(`${API_URL}/tickets/${id}`, {
     method: "DELETE",
@@ -43,8 +38,6 @@ export async function deleteTicket(id) {
   return response.json();
 }
 
-
-// UPDATE ticket
 export async function updateTicket({ id, updatedTicket }) {
   const response = await fetch(`${API_URL}/tickets/${id}`, {
     method: "PATCH",

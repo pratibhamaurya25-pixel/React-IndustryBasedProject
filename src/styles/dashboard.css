@@ -35,8 +35,6 @@
   font-size: 1rem;
 }
 
-/* Search Bar */
-
 .search-bar {
   width: 320px;
   padding: 14px 20px;
@@ -54,7 +52,6 @@
   box-shadow: 0 0 8px rgba(37,99,235,.25);
 }
 
-/* Dashboard Cards */
 
 .dashboard-content {
   display: flex;
@@ -62,8 +59,6 @@
   gap: 25px;
   flex-wrap: wrap;
 }
-
-/* Card */
 
 .card {
   width: 220px;
@@ -92,8 +87,6 @@
   font-weight: 600;
   color: #374151;
 }
-
-/* Top Border Colors */
 
 .total {
   border-top: 6px solid #3b82f6;
